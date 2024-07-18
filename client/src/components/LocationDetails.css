@@ -1,0 +1,41 @@
+.location-details {
+  padding: 20px;
+}
+
+.location-details select,
+.location-details button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.location-details button {
+  background-color: #ffdd00;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.location-details button:hover {
+  background-color: #ffc800;
+}
+
+.review-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.review-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.review-list li:last-child {
+  border-bottom: none;
+}
+
+.review-list p {
+  margin: 5px 0;
+}

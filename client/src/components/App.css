@@ -1,0 +1,9 @@
+/* src/App.css */
+.app-container {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    min-height: 100vh;
+    padding: 20px;
+  }
+  

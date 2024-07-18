@@ -1,0 +1,88 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: aqua;
+}
+
+h1, h2 {
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 100;
+  color: blueviolet;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin: 20px; /* Add some margin to ensure spacing from the navbar */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: greenyellow;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 12px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #29bb97;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: blue;
+  color: yellow;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  color: darkcyan;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  background: #100720;
+  transition: 0.1s;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  background-color: goldenrod;
+}
+
+button::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+button:active {
+  transform: scale(0.9) rotate(3deg);
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 19.8%, rgba(2, 245, 255, 1) 100.2%);
+  transition: 2.8s;
+}

@@ -1,0 +1,26 @@
+
+.location-list {
+    padding: 20px;
+  }
+  
+  .location-item {
+    background-color: #ffdd00;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .location-item h3 {
+    margin: 0;
+  }
+  
+  .view-details {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .view-details:hover {
+    text-decoration: underline;
+  }
+  
