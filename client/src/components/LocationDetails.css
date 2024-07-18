@@ -11,7 +11,7 @@
 }
 
 .location-details button {
-  background-color: #ffdd00;
+  background-color: #6d6845;
   border: none;
   color: #000;
   cursor: pointer;
@@ -19,7 +19,7 @@
 }
 
 .location-details button:hover {
-  background-color: #ffc800;
+  background-color: #dbcc93;
 }
 
 .review-list {
