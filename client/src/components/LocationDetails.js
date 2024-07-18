@@ -23,7 +23,7 @@ const LocationDetails = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch('/traveler/tickets')
+    fetch('https://globe-gooo.onrender.com/traveler/tickets')
       .then(response => response.json())
       .then(data => setTickets(data))
       .catch(error => console.error('Error fetching tickets:', error));
@@ -51,7 +51,7 @@ const LocationDetails = () => {
     }
 
     try {
-      const response = await fetch('/traveler/buy_ticket', {
+      const response = await fetch('https://globe-gooo.onrender.com/traveler/buy_ticket', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const LocationDetails = () => {
   };
 
   const handleReviewPosted = () => {
-    axios.get(`/traveler/locations/${id}`)
+    axios.get(`https://globe-gooo.onrender.com/traveler/locations/${id}`)
       .then(response => {
         setReviews(response.data.reviews);
       })

@@ -16,7 +16,7 @@ const UserReviews = () => {
           return;
         }
 
-        const response = await axios.get('/traveler/user_reviews', {
+        const response = await axios.get('https://globe-gooo.onrender.com/traveler/user_reviews', {
           headers: {
             Authorization: `Bearer ${token}`
           }

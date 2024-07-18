@@ -27,7 +27,7 @@ const ReviewForm = ({ locationId, onReviewPosted }) => {
     }
 
     axios.post(
-      '/traveler/post_review',
+      'https://globe-gooo.onrender.com/traveler/post_review',
       {
         location_id: locationId,
         rating: values.rating,
