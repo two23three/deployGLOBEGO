@@ -41,7 +41,7 @@ const UserReviews = () => {
         return;
       }
 
-      await axios.delete(`/traveler/user_reviews/${reviewId}`, {
+      await axios.delete(`https://globe-gooo.onrender.com/traveler/user_reviews/${reviewId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -55,7 +55,7 @@ const UserReviews = () => {
 
   const handleReviewUpdated = () => {
     setEditingReviewId(null);
-    axios.get('/traveler/user_reviews', {
+    axios.get('https://globe-gooo.onrender.com/traveler/user_reviews', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('jwt_token')}`
       }

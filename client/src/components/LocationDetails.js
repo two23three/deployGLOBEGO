@@ -12,7 +12,7 @@ const LocationDetails = () => {
   const [selectedTicket, setSelectedTicket] = useState(null);
 
   useEffect(() => {
-    axios.get(`/traveler/locations/${id}`)
+    axios.get(`https://globe-gooo.onrender.com/traveler/locations/${id}`)
       .then(response => {
         setLocation(response.data);
         setReviews(response.data.reviews);

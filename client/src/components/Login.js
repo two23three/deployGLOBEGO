@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
   const history = useHistory();
 
   const onSubmit = (values, { setSubmitting }) => {
-    axios.post('/auth/login', values)
+    axios.post(`https://globe-gooo.onrender.com/auth/login`, values)
       .then(response => {
         console.log('User logged in successfully:', response.data);
         localStorage.setItem('jwt_token', response.data.token); // Store token in localStorage

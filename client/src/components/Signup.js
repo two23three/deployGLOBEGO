@@ -20,14 +20,18 @@ const Signup = ({ onLogin }) => {
 
   const [registered, setRegistered] = useState(false);
   const [loginAfterRegister, setLoginAfterRegister] = useState(false);
+  const [registeredEmail, setRegisteredEmail] = useState('');
+  const [registeredPassword, setRegisteredPassword] = useState('');
 
   const onSubmit = (values, { setSubmitting, resetForm }) => {
-    axios.post('/auth/register', values)
+    axios.post(`https://globe-gooo.onrender.com/auth/register`, values)
       .then(response => {
         console.log('User registered successfully:', response.data);
         resetForm();
         setRegistered(true);
         setLoginAfterRegister(true);
+        setRegisteredEmail(values.email);
+        setRegisteredPassword(values.password);
       })
       .catch(error => {
         console.error('Error registering user:', error);
@@ -75,7 +79,7 @@ const Signup = ({ onLogin }) => {
       {registered && loginAfterRegister && (
         <div>
           <h1>Login after Registration</h1>
-          <Login email={initialValues.email} password={initialValues.password} onLogin={onLogin} />
+          <Login initialEmail={registeredEmail} initialPassword={registeredPassword} onLogin={onLogin} />
         </div>
       )}
     </div>

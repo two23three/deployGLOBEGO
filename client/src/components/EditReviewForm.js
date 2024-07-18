@@ -15,7 +15,7 @@ const EditReviewForm = ({ review, onReviewUpdated }) => {
     }
 
     try {
-      const response = await axios.patch(`/traveler/user_reviews/${review.id}`, {
+      const response = await axios.patch(`https://globe-gooo.onrender.com/traveler/user_reviews/${review.id}`, {
         rating,
         comment
       }, {

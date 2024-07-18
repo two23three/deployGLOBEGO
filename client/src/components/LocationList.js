@@ -7,7 +7,7 @@ const LocationList = () => {
 
   useEffect(() => {
     console.log("Fetching locations...");
-    fetch('/traveler/locations')
+    fetch(`https://globe-gooo.onrender.com/traveler/locations`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
