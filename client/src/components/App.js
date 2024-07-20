@@ -8,7 +8,7 @@ import AuthLayout from './AuthLayout';
 import MainLayout from './MainLayout';
 import './App.css';
 import UserReviews from './Reviews';
-
+import Profile from './Profile';
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -46,6 +46,9 @@ const App = () => {
             </PrivateRoute>
             <PrivateRoute path="/reviews" isAuthenticated={isAuthenticated}>
               <UserReviews />
+            </PrivateRoute>
+            <PrivateRoute path="/profile" isAuthenticated={isAuthenticated}>
+              <Profile /> 
             </PrivateRoute>
             <Redirect to="/login" />
           </Switch>
