@@ -1,7 +1,7 @@
 .location-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns */
-  gap: 6px;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  gap: 20px; /* Increase gap for better spacing */
   padding: 20px;
   box-sizing: border-box;
   width: 100%;

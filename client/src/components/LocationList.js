@@ -24,16 +24,14 @@ const LocationList = () => {
   return (
     <div className="location-list">
       <h2>Locations</h2>
-      <ul>
-        {locations.map(location => (
-          <li key={location.id} className="location-item">
-            <h3>{location.name}</h3>
-            <img src={location.image_url} alt={location.name} />
-            <p>{location.description}</p>
-            <Link to={`/location/${location.id}`} className="view-details">View Details</Link>
-          </li>
-        ))}
-      </ul>
+      {locations.map(location => (
+        <div key={location.id} className="location-item">
+          <h3>{location.name}</h3>
+          <img src={location.image_url} alt={location.name} />
+          <p>{location.description}</p>
+          <Link to={`/location/${location.id}`} className="view-details">View Details</Link>
+        </div>
+      ))}
     </div>
   );
 };

@@ -86,6 +86,7 @@ const LocationDetails = () => {
   return (
     <div className="location-details">
       <h1>{location.name}</h1>
+      <img src={location.image_url} alt={location.name} />
       <p>{location.description}</p>
       <h3>Available Tickets</h3>
       <select onChange={(e) => setSelectedTicket(e.target.value)}>
