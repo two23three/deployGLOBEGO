@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReviewForm from './ReviewForm';
+import Modal from 'react-modal';
 import './LocationDetails.css';
+
+Modal.setAppElement('#root');
 
 const LocationDetails = () => {
   const { id } = useParams();
@@ -10,6 +13,8 @@ const LocationDetails = () => {
   const [reviews, setReviews] = useState([]);
   const [tickets, setTickets] = useState([]);
   const [selectedTicket, setSelectedTicket] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
 
   useEffect(() => {
     axios.get(`https://globe-gooo.onrender.com/traveler/locations/${id}`)
@@ -62,9 +67,11 @@ const LocationDetails = () => {
 
       const data = await response.json();
       if (response.ok) {
-        alert(data.message);
+        setModalMessage(data.message);
+        setIsModalOpen(true);
       } else {
-        alert(`Error: ${data.message}`);
+        setModalMessage(`Error: ${data.message}`);
+        setIsModalOpen(true);
       }
     } catch (error) {
       console.error('Error buying ticket:', error);
@@ -79,6 +86,10 @@ const LocationDetails = () => {
       .catch(error => {
         console.error('Error fetching reviews:', error);
       });
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   if (!location) return <div>Loading...</div>;
@@ -98,6 +109,18 @@ const LocationDetails = () => {
         ))}
       </select>
       <button onClick={buyTicket}>Buy Ticket</button>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="Ticket Purchase Status"
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <h2>Ticket Status</h2>
+        <p>{modalMessage}</p>
+        <button onClick={closeModal}>Close</button>
+      </Modal>
 
       <h2>Reviews</h2>
       {reviews.length > 0 ? (
