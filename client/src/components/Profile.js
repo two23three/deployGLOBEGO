@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import './Profile.css';
 
 const Profile = () => {
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
+  const history = useHistory();
 
   useEffect(() => {
     const jwtToken = localStorage.getItem('jwt_token');
@@ -29,6 +31,11 @@ const Profile = () => {
       });
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('jwt_token');
+    history.push('/login');  // Redirect to login page
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -36,6 +43,7 @@ const Profile = () => {
   return (
     <div className="profile">
       <h1>My Tickets</h1>
+      <button onClick={handleLogout}>Logout</button>
       {tickets.length > 0 ? (
         <ul className="ticket-list">
           {tickets.map(ticket => (
