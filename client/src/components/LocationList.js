@@ -23,7 +23,7 @@ const LocationList = () => {
 
   return (
     <div className="location-list">
-      <h2>Locations</h2>
+      <h2 className='locations'>Locations</h2>
       {locations.map(location => (
         <div key={location.id} className="location-item">
           <h3>{location.name}</h3>
