@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import './ReviewForm.css';
 
 const ReviewForm = ({ locationId, onReviewPosted }) => {
   const initialValues = {
@@ -53,7 +53,7 @@ const ReviewForm = ({ locationId, onReviewPosted }) => {
   };
 
   return (
-    <div>
+    <div className="review-form">
       <h2>Post a Review</h2>
       <Formik
         initialValues={initialValues}
@@ -72,12 +72,12 @@ const ReviewForm = ({ locationId, onReviewPosted }) => {
                 <option value="4">4</option>
                 <option value="5">5</option>
               </Field>
-              <ErrorMessage name="rating" component="div" />
+              <ErrorMessage name="rating" component="div" className="error" />
             </div>
             <div>
               <label htmlFor="comment">Comment</label>
               <Field as="textarea" id="comment" name="comment" />
-              <ErrorMessage name="comment" component="div" />
+              <ErrorMessage name="comment" component="div" className="error" />
             </div>
             <button type="submit" disabled={isSubmitting}>
               Submit

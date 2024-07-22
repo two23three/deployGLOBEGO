@@ -100,15 +100,17 @@ const LocationDetails = () => {
       <img src={location.image_url} alt={location.name} />
       <p>{location.description}</p>
       <h3>Available Tickets</h3>
-      <select onChange={(e) => setSelectedTicket(e.target.value)}>
-        <option value="">Select a ticket</option>
-        {tickets.map(ticket => (
-          <option key={ticket.id} value={ticket.id}>
-            {`Ticket ID: ${ticket.id}, Price: ${ticket.price}, Means: ${ticket.means}, Seat No: ${ticket.seat_no}, Location ID: ${ticket.location_id}`}
-          </option>
-        ))}
-      </select>
-      <button onClick={buyTicket}>Buy Ticket</button>
+      <div className="ticket-select">
+        <select onChange={(e) => setSelectedTicket(e.target.value)}>
+          <option value="">Select a ticket</option>
+          {tickets.map(ticket => (
+            <option key={ticket.id} value={ticket.id}>
+              {`Ticket ID: ${ticket.id}, Price: ${ticket.price}, Means: ${ticket.means}, Seat No: ${ticket.seat_no}, Location ID: ${ticket.location_id}`}
+            </option>
+          ))}
+        </select>
+        <button onClick={buyTicket}>Buy Ticket</button>
+      </div>
 
       <Modal
         isOpen={isModalOpen}
